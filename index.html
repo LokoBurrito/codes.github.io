@@ -1,51 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code Generator</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 50px;
-    }
-    .code {
-      font-size: 24px;
-      margin: 20px;
-      padding: 10px;
-      background-color: #f1f1f1;
-      border-radius: 5px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Generator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Random Code Generator</h1>
-  <button onclick="generateCode()">Generate Code</button>
-  <div id="codeDisplay" class="code">Your code will appear here.</div>
+    <div class="container">
+        <div class="loading-text">
+            <span class="text">Loading</span><span class="underscore">_</span>
+        </div>
+        <div class="key-display">
+            <h2>Generated Key:</h2>
+            <p id="key"></p>
+        </div>
+    </div>
 
-  <script>
-    function generateCode() {
-      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-      let code = '';
-      for (let i = 0; i < 12; i++) {
-        code += characters.charAt(Math.floor(Math.random() * characters.length));
-      }
-      document.getElementById('codeDisplay').textContent = code;
-      // Optionally, send the code to your Python app for redemption (using Fetch API)
-    }
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
