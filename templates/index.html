@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lootbox Redeemer</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .msg {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e7f4e4;
+            border: 1px solid #b2d8b2;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lootbox Redeemer</h1>
+        <form method="POST">
+            <input type="text" name="code" placeholder="Enter your code" required />
+            <button type="submit">Redeem</button>
+        </form>
 
+        {% if message %}
+        <div class="msg">
+            <strong>{{ message }}</strong>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
