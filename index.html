@@ -1,22 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Key Generator</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Lootbox Redeemer</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .msg {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e7f4e4;
+            border: 1px solid #b2d8b2;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <div class="loading-text">
-            <span class="text">Loading </span><span class="underscore">_</span>
-        </div>
-        <div class="key-display">
-            <h2>Generated Key:</h2>
-            <p id="key"></p>
-        </div>
-    </div>
+        <h1>Lootbox Redeemer</h1>
+        <form method="POST">
+            <input type="text" name="code" placeholder="Enter your code" required />
+            <button type="submit">Redeem</button>
+        </form>
 
-    <script src="script.js"></script>
+        {% if message %}
+        <div class="msg">
+            <strong>{{ message }}</strong>
+        </div>
+        {% endif %}
+    </div>
 </body>
 </html>
